@@ -73,23 +73,23 @@ let stevecWin=0;
 let stevecLost=0;
 let stevecDraw=0;
 let i=0;
-const dokoliko=3;
+const dokoliko=5;
 
 
 function game() {
     for (stevecLost = 0, stevecWin=0; stevecLost < dokoliko, stevecWin<dokoliko; stevecLost,stevecWin) {
         getComputerChoice();
-        let playerSelection=prompt("Prosim izberi svoje orožje");
+        let playerSelection=prompt("Please pick your weapon: ");
         i++;
-        console.log("Runda: "+i);
-        console.log("Izbor računalnika: " +CPUpick);
-        console.log("Tvoja izbira: " +playerSelection);
+        console.log("Round: "+i);
+        console.log("Computer's pick: " +CPUpick);
+        console.log("Your pick: " +playerSelection);
         
     playRound(playerSelection,CPUpick);
     let whowin=playRound(playerSelection,CPUpick);
     if (whowin===1) {
         stevecWin++;
-        console.log("Tvoje zmage: "+stevecWin);
+        console.log("Your score: "+stevecWin);
     }
     else if (whowin===2) {
         stevecLost++;
@@ -97,18 +97,18 @@ function game() {
     else if (whowin===0  || 4) {
         stevecDraw++;
         if(whowin===4) {
-            console.log("Uporabljaš neregistrirano orožje.");
+            console.log("Your weapon is not registered.");
         } 
     }
     
     
-    console.log("REZULTAT ::: Igralec: "+stevecWin+" ::: Računalnik: "+stevecLost+" ::: Neodločeno: "+stevecDraw);
+    console.log("RESULT ::: Player: "+stevecWin+" ::: Computer: "+stevecLost+" ::: Draw: "+stevecDraw);
     console.log(whowin);
     if(stevecWin>=dokoliko) {
-        console.log("ZMAGA!!!");
+        console.log("WIN!!!");
     }
     if (stevecLost>=dokoliko) {
-        console.log("PORAZ!!!");
+        console.log("YOU LOST!!!");
     }
 
     //console.log(playRound);
