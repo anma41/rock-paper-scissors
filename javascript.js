@@ -12,14 +12,13 @@ let playerSelection=prompt("Prosim izberi svoje orožje");
 function playRound(playerSelection,CPUpick) {
 if (playerSelection.toLowerCase() === "rock") {
     if (CPUpick==="rock") {
-        return "Tie";
+        return 0;
         }
     else if (CPUpick==="paper") {
-        return "Lost";
-        console.log("Izgubil si!");
+        return 2;
     }
     else if (CPUpick==="scissors") {
-        return "Win";
+        return 1;
         console.log("Bravo, zmaga!");
     }
     else {
@@ -28,16 +27,16 @@ if (playerSelection.toLowerCase() === "rock") {
 }
 else if (playerSelection.toLowerCase() === "paper") {
     if (CPUpick==="paper") {
-        return "Tie";
+        return 0;
         console.log("izenačenje");
         }
     else if (CPUpick==="scissors") {
-        return "Lost";
+        return 2;
 
         console.log("Izgubil si!");
     }
     else if (CPUpick==="rock") {
-        return "Win";
+        return 1;
         console.log("Bravo, zmaga!");
     }
     else {
@@ -48,15 +47,15 @@ else if (playerSelection.toLowerCase() === "paper") {
 
 else if (playerSelection.toLowerCase() === "scissors") {
     if (CPUpick==="scissors") {
-        return "Tie";
+        return 0;
         console.log("izenačenje");
         }
     else if (CPUpick==="rock") {
-        return "Lost";
+        return 2;
         console.log("Izgubil si!");
             }
     else if (CPUpick==="paper") {
-        return "Win";
+        return 1;
         console.log("Bravo, zmaga!");
     } 
 }
@@ -70,8 +69,46 @@ console.log("Tvoja izbira: " +playerSelection);
 playRound(playerSelection,CPUpick);
 console.log(playRound(playerSelection, CPUpick));
 
+let stevecWin=0;
+let stevecLost=0;
+let stevecDraw=0;
 
 
+
+function game() {
+    playRound(playerSelection,CPUpick);
+    console.log("rezultat: "+playRound);
+}
+  /*  )
+    if rezultat = 1 {
+        for (i=0; i < 5; i++) {
+    playRound(playerSelection,CPUpick)
+    } 
+}
+}*/
+
+/*<script>
+     let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+     for (let i=1; i<= answer; i++) {
+        if (i%15===0) {
+            console.log(i, "FizzBuzz");
+        } 
+        else if (i % 3===0) {
+            console.log(i, "Fizz");
+        }
+        else if (i % 5===0) {    
+        console.log(i, " Buzz");
+     }
+    }
+    //comment najprej določi spremenljivko in ji definiraj začetno vrednost
+    let x=0;
+    let y=0;
+    let sum=x+y;
+    console.log(sum);
+
+    
+    
+    </script>*/
 
 /*if (playerSelection !== "scissors" || "rock"  || "paper") {
     console.log(playerSelection);
