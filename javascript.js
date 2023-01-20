@@ -4,89 +4,127 @@ function getComputerChoice() {
     CPUpick=CPUitems[Math.floor(Math.random()*CPUitems.length)];
     return CPUpick;
 }
-getComputerChoice();
+//getComputerChoice();
 //console.log(CPUpick);
 
-
-let playerSelection=prompt("Prosim izberi svoje orožje");
+playerSelection="orožje";
+//let playerSelection="prazno";//=prompt("Prosim izberi svoje orožje");
+//function playerSel(playerSelection) {
+  //  playerSelection=prompt("Prosim izberi svoje orožje");
+//}
+//playerSel(playerSelection);
+//console.log(playerSel);
 function playRound(playerSelection,CPUpick) {
-if (playerSelection.toLowerCase() === "rock") {
-    if (CPUpick==="rock") {
-        return 0;
-        }
-    else if (CPUpick==="paper") {
-        return 2;
+    if (playerSelection.toLowerCase() === "rock") {
+            if (CPUpick==="rock") {
+                return 0;
+                }
+            else if (CPUpick==="paper") {
+                return 2;
+            }
+            else if (CPUpick==="scissors") {
+                return 1;
+                console.log("Bravo, zmaga!");
+            }
     }
-    else if (CPUpick==="scissors") {
-        return 1;
-        console.log("Bravo, zmaga!");
-    }
-    else {
-        console.log("Neregistrirano orožje.")
-    }  
-}
-else if (playerSelection.toLowerCase() === "paper") {
-    if (CPUpick==="paper") {
-        return 0;
-        console.log("izenačenje");
-        }
-    else if (CPUpick==="scissors") {
-        return 2;
+    else if (playerSelection.toLowerCase() === "paper") {
+        if (CPUpick==="paper") {
+            return 0;
+            console.log("izenačenje");
+            }
+        else if (CPUpick==="scissors") {
+            return 2;
 
-        console.log("Izgubil si!");
+            console.log("Izgubil si!");
+        }
+        else if (CPUpick==="rock") {
+            return 1;
+            console.log("Bravo, zmaga!");
+        }
     }
-    else if (CPUpick==="rock") {
-        return 1;
-        console.log("Bravo, zmaga!");
-    }
-    else {
-        return "Wrong item!";
-        console.log("Neregistrirano orožje.");
-    } 
-}
 
 else if (playerSelection.toLowerCase() === "scissors") {
     if (CPUpick==="scissors") {
-        return 0;
         console.log("izenačenje");
-        }
+        return 0;
+                }
     else if (CPUpick==="rock") {
-        return 2;
         console.log("Izgubil si!");
+        return 2;
             }
     else if (CPUpick==="paper") {
-        return 1;
         console.log("Bravo, zmaga!");
+        return 1;
     } 
 }
 else
-    {console.log("Neregistrirano orožje.")
+    {//console.log("Neregistrirano orožje.")
+    return 4;
     }
 }
 
-console.log("Izbor računalnika: " +CPUpick);
-console.log("Tvoja izbira: " +playerSelection);
-playRound(playerSelection,CPUpick);
-console.log(playRound(playerSelection, CPUpick));
+
+//console.log("Izbor računalnika: " +CPUpick);
+//console.log("Tvoja izbira: " +playerSelection);
+//playRound(playerSelection,CPUpick);
+//console.log(playRound(playerSelection, CPUpick));
 
 let stevecWin=0;
 let stevecLost=0;
 let stevecDraw=0;
-
+let i=0;
+const dokoliko=3;
 
 
 function game() {
+    for (stevecLost = 0, stevecWin=0; stevecLost < dokoliko, stevecWin<dokoliko; stevecLost,stevecWin) {
+        getComputerChoice();
+        let playerSelection=prompt("Prosim izberi svoje orožje");
+        i++;
+        console.log("Runda: "+i);
+        console.log("Izbor računalnika: " +CPUpick);
+        console.log("Tvoja izbira: " +playerSelection);
+        
     playRound(playerSelection,CPUpick);
-    console.log("rezultat: "+playRound);
+    let whowin=playRound(playerSelection,CPUpick);
+    if (whowin===1) {
+        stevecWin++;
+        console.log("Tvoje zmage: "+stevecWin);
+    }
+    else if (whowin===2) {
+        stevecLost++;
+        }
+    else if (whowin===0  || 4) {
+        stevecDraw++;
+        if(whowin===4) {
+            console.log("Uporabljaš neregistrirano orožje.");
+        } 
+    }
+    
+    
+    console.log("REZULTAT ::: Igralec: "+stevecWin+" ::: Računalnik: "+stevecLost+" ::: Neodločeno: "+stevecDraw);
+    console.log(whowin);
+    if(stevecWin>=dokoliko) {
+        console.log("ZMAGA!!!");
+    }
+    if (stevecLost>=dokoliko) {
+        console.log("PORAZ!!!");
+    }
+
+    //console.log(playRound);
+    
 }
+}
+game();
   /*  )
     if rezultat = 1 {
         for (i=0; i < 5; i++) {
     playRound(playerSelection,CPUpick)
     } 
 }
-}*/
-
+}
+console.log(game());
+console.log(i);
 /*<script>
      let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
      for (let i=1; i<= answer; i++) {
