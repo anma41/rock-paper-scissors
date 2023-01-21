@@ -1,0 +1,29 @@
+[33mcommit 024596e8383acab4bcb2f712809eb820661e9d5e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: anma41 <118857442+anma41@users.noreply.github.com>
+Date:   Fri Jan 20 17:50:25 2023 +0100
+
+    Game function started
+
+[33mcommit 25b354387fa51cfbdc1db5e8dc5b8a66a0eedd82[m
+Author: anma41 <118857442+anma41@users.noreply.github.com>
+Date:   Fri Jan 20 17:04:29 2023 +0100
+
+    function playRound added
+
+[33mcommit affa3a5c80c9820043fa2d5e1d377b79b222f508[m
+Author: anma41 <118857442+anma41@users.noreply.github.com>
+Date:   Thu Jan 19 23:52:57 2023 +0100
+
+    added CPUselect, playerselect and IF comparision
+
+[33mcommit 79ad1e2a0cbd2726058404212256b6d7a3e60568[m
+Author: anma41 <118857442+anma41@users.noreply.github.com>
+Date:   Thu Jan 19 17:51:55 2023 +0100
+
+    First javascript project, files created
+
+[33mcommit f61bf6b6a9634d9143e204b23533b82c328d5522[m
+Author: anma41 <118857442+anma41@users.noreply.github.com>
+Date:   Thu Jan 19 17:43:40 2023 +0100
+
+    Initial commit
